@@ -18,6 +18,7 @@ public class FeginController {
     @RequestMapping("/hello2")
     public String hello2(){
         String result = myFegin.test();
+        System.out.println(Thread.currentThread().getName());
         return "调用者2被调用！返回值：" + result;
     }
 }
