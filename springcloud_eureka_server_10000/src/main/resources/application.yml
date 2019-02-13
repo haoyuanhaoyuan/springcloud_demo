@@ -1,0 +1,22 @@
+#注册中心的端口
+server:
+  port: 10000
+
+#配置服务的名称
+spring:
+  application:
+    name: eureka1
+
+eureka:
+  client:
+    #注册中心的地址
+    service-url:
+      #集群的配置，除了本身的地址之外，需要注册到其他的注册中心上
+      defaultZone: http://www.bbb.com:10001/eureka, http://www.ccc.com:10002/eureka
+    #当前服务不能去调用其他服务 - 必须要配置
+    fetch-registry: false
+    #注册中心不能自我注册
+    register-with-eureka: false
+  #实例的主机名
+  instance:
+    hostname: localhost
